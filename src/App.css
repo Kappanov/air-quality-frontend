@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h3 {
+  color: #1a237e;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  padding: 2rem 0;
+}
+
+/* Стили для карточки формы */
+.form-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Стили для таблицы */
+.table-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.table th {
+  background-color: #3f51b5;
   color: white;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.table tbody tr {
+  transition: background-color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
+.table tbody tr:hover {
+  background-color: #e8eaf6;
+}
+
+/* Стили для формы */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #b0bec5;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3f51b5;
+  box-shadow: 0 0 8px rgba(63, 81, 181, 0.2);
+}
+
+/* Стили для кнопки */
+.btn-primary {
+  background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+}
+
+/* Стили для алертов */
+.alert {
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .form-card, .table-card {
+    padding: 1rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.85rem;
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1rem;
   }
 }
