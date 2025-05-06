@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.animate-fade-in {
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.react-calendar {
+	border: none !important;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__tile--active {
+	background: #3b82f6 !important;
+	color: white !important;
 }
